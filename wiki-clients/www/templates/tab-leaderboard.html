@@ -1,0 +1,11 @@
+<ion-view view-title="Leaderboard">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar" ng-repeat="leading in leaders" type="item-text-wrap">
+        <span class="name-initials-avatar">{{senderInitials(leading._id)}}</span>
+        <h2 style="margin: 10px 0px 2px 0; display: inline-block">{{leading._id}}</h2>
+        <p style="float: right; padding-top: 9px;">{{leading.count}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
