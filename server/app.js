@@ -13,6 +13,7 @@ var config = require('./config/environment');
 // Setup server
 
 var app = express();
+app.use(express.static('www'));
 
 var mongoose = require('mongoose');
 mongoose.connect(config.mongo.uri);

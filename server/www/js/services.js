@@ -1,9 +1,9 @@
 angular.module('starter.services', ['ngtimeago', 'ngResource'])
 
-.factory('SeedsService', function($http, $resource) {
+.factory('SeedsService', function($http, $resource, API) {
   // Might use a resource here that returns a JSON array
 
-  var TermsResource = $resource("http://localhost:9000/api/wikiseeds/data/:_id", {_id: '@id'});
+  var TermsResource = $resource(API + '/api/wikiseeds/data/:_id', {_id: '@id'});
 
   getAllSeeds = function () {
     return TermsResource.query();
@@ -14,7 +14,7 @@ angular.module('starter.services', ['ngtimeago', 'ngResource'])
   }
 
   getLeaders = function () {
-    return $http.get("http://localhost:9000/api/wikiseeds/leaderboard", {params : {limit: 20}});
+    return $http.get(API + '/api/wikiseeds/leaderboard', {params : {limit: 20}});
   }
 
   senderInitials = function (senderName) {
