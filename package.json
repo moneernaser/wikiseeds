@@ -56,7 +56,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "node server/app.js",
+    "start": "cd server && node app.js",
     "test": "grunt test"
   },
   "private": true
